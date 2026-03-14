@@ -104,7 +104,23 @@ def display_game_state(suspects, locations, items, pos_suspect, pos_location, po
     # Only print options that are still marked as possible in the notebook.
     # NOTE: We display with numbering starting at 1 for user friendliness,
     # even though the internal indexes start at 0.
-    pass
+    print(f"DEDUCTION NOTEBOOK\nRemaining Attempts: {attempts}\nClue Tokens: {tokens}")
+    print("\nSUSPECTS:")
+    i = 0
+    while i < len(suspects):
+        print(f"{i+1} {suspects[i]} ({pos_suspect[i]})")
+        i+=1
+    print("\nLOCATIONS:")
+    i = 0
+    while i < len(locations):
+        print(f"{i+1} {locations[i]} ({pos_location[i]})")
+        i+=1
+    print("\nITEMS:")
+    i = 0
+    while i < len(items):
+        print(f"{i+1} {items[i]} ({pos_item[i]})")
+        i+=1
+    print("")
 
 
 def evaluate_guess(guess_idx, solution_idx):
