@@ -290,10 +290,15 @@ def use_clue_token(possible_list, solution_index):
     """
     # Only eliminate an option if it is still possible
     # and it is not the solution_index (never eliminate the correct answer).
-
+    i = 0
+    while i < len(possible_list):
+        if (possible_list[i] == True) and (i != solution_index): # as long as the thing is True and it is not the solution
+            possible_list[i] = False
+            break
+        i+=1
     # If we reach the end without eliminating anything, we couldn't use the token
     # to remove an incorrect option (often because only the correct one remains).
-    pass
+    return True
 
 
 def best_clue_category(pos_suspect, pos_location, pos_item):
