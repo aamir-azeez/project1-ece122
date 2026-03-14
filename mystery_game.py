@@ -23,10 +23,10 @@ Important design notes:
 - This version has NO witness reveal and NO separate cases.
 """
 """
-Student 1:
+Student 1: Aamir Abdul Azeez
 Spire Id:
 
-Student 2: 
+Student 2: Wunyoh Loc
 Spire Id:
 """
 import random
