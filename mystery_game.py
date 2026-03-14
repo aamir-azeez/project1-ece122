@@ -302,7 +302,7 @@ def use_clue_token(possible_list, solution_index):
         i+=1
     # If we reach the end without eliminating anything, we couldn't use the token
     # to remove an incorrect option (often because only the correct one remains).
-    return True
+    return False
 
 
 def best_clue_category(pos_suspect, pos_location, pos_item):
