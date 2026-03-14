@@ -178,7 +178,11 @@ def is_win(result_list):
     Returns:
         True only if all three parts of the guess were correct.
     """
-    pass
+
+    win = False
+    if ((result_list[0] == True) and (result_list[1] == True) and (result_list[2] == True)):
+        win = True
+    return win
 
 
 def update_all_notebooks(pos_suspect, pos_location, pos_item, guess_idx, result_list):
