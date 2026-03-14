@@ -207,6 +207,13 @@ def update_all_notebooks(pos_suspect, pos_location, pos_item, guess_idx, result_
     Returns:
         None (the notebook trackers are updated in place)
     """
+    if (result_list[0]==False):
+        pos_suspect[guess_idx[0]] = False
+    if (result_list[1]==False):
+        pos_location[guess_idx[1]] = False
+    if (result_list[2]==False):
+        pos_item[guess_idx[2]] = False
+
     # If the suspect part was incorrect, that specific suspect cannot be in the envelope,
     # so cross it off in the suspect notebook.
 
