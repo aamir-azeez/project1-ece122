@@ -205,7 +205,7 @@ def update_all_notebooks(pos_suspect, pos_location, pos_item, guess_idx, result_
     pass
 
 
-def check_and_record_guess(guess_history, guess_idx):
+def check_and_record_guess(guess_history, guess_idx):   
     """
     Check whether a guess is a duplicate, then record it in history.
 
@@ -230,12 +230,19 @@ def check_and_record_guess(guess_history, guess_idx):
     """
     # Search through history to see if the exact same triple was guessed before.
     # A "duplicate" means same suspect index AND same location index AND same item index.
-
+    i = 0
+    penalty = 1
+    while i < len(guess_history):
+        if (guess_history[i] == guess_idx):
+            penalty = 2
+        i+=1
+    
+    guess_history.append(guess_idx.copy())
     # Record the guess so future turns can detect duplicates.
     # Important: store the three index values, not a reference that might change later.
 
     # Return the attempt penalty amount so main.py can subtract it from attempts.
-    pass
+    return penalty # attempt penalty amount
 
 
 def use_clue_token(possible_list, solution_index):
