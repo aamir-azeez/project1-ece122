@@ -149,9 +149,22 @@ def evaluate_guess(guess_idx, solution_idx):
         solution_idx = [1, 2, 3]
         returns      = [True, False, False]
     """
+    result_list = [True, True, True]
+    if (guess_idx[0]==solution_idx[0]):
+        result_list[0]=True
+    else:
+        result_list[0]=False
+    if (guess_idx[1]==solution_idx[1]):
+        result_list[1]=True
+    else:
+        result_list[1]=False
+    if (guess_idx[2]==solution_idx[2]):
+        result_list[2]=True
+    else:
+        result_list[2]=False
     # We always compare 3 categories in this order:
     # 0 = suspect, 1 = location, 2 = item
-    pass
+    return result_list
 
 
 def is_win(result_list):
